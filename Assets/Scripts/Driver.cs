@@ -7,7 +7,7 @@ public class Driver : MonoBehaviour
     [SerializeField] float steerSpeed = 225f;
     [SerializeField] float moveSpeed = 15f;
     
-//shart
+
     void Start()
     {
         
