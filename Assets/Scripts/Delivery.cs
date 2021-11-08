@@ -7,12 +7,15 @@ public class Delivery : MonoBehaviour
     [SerializeField] float destroyDelay = 0.5f;
     
     bool hasPackage = false;
-    int numberOfCustomers;
-    int packagesDelivered;
+    int numberOfCustomers, packagesDelivered;
+    
+    SpriteRenderer playerSpriteRenderer;
+    Color32 hasPackageColor = Color.green, happyCustomerColor = Color.green, noPackageColor = Color.white;
     
     void Start() 
     {
         numberOfCustomers = GameObject.FindGameObjectsWithTag("Customer").Length;
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     void OnCollisionEnter2D(Collision2D other) 
@@ -22,13 +25,18 @@ public class Delivery : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) 
     {
+        SpriteRenderer objectSpriteRenderer = other.gameObject.GetComponent<SpriteRenderer>();
+        
         if (other.tag == "Package")
         {
+            // pick up the package, destroy the object
+            // change the player's color to green to show that they have a package
             if (!hasPackage)
             {
                 Debug.Log("Package picked up!");
                 hasPackage = true;
                 Destroy(other.gameObject, destroyDelay);
+                playerSpriteRenderer.color = hasPackageColor;
             }
 
             else 
@@ -41,15 +49,17 @@ public class Delivery : MonoBehaviour
         else if (other.tag == "Customer")
         {
             // change the customer's color to green if a package has been delivered to them already.
-            if (hasPackage)
+            // change player color back to white to signify that they no longer have a package.
+            if (hasPackage && !(objectSpriteRenderer.color == happyCustomerColor))
             {
                 Debug.Log("Package delivered!");
                 hasPackage = false;
-                other.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                objectSpriteRenderer.color = happyCustomerColor;
                 packagesDelivered++;
+                playerSpriteRenderer.color = noPackageColor;
             }
 
-            else if (other.gameObject.GetComponent<SpriteRenderer>().color == Color.green)
+            else if (other.gameObject.GetComponent<SpriteRenderer>().color == happyCustomerColor)
             {
                 Debug.Log("A package has already been delivered to this customer!");
             }
