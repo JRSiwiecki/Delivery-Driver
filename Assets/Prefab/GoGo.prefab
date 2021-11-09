@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8352980372571873656}
   - component: {fileID: 8352980372571873658}
   - component: {fileID: 8352980372571873659}
+  - component: {fileID: 1417098422}
+  - component: {fileID: 5771209619640832339}
   m_Layer: 0
   m_Name: GoGo
   m_TagString: Untagged
@@ -163,3 +165,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 0
+--- !u!114 &1417098422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352980372571873652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b27367e8f34da4ca367402bd07370b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+--- !u!114 &5771209619640832339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352980372571873652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045efade535ba7e42a13ffe3facf89c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

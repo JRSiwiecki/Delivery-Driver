@@ -39,15 +39,15 @@ public class Driver : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "Bump")
+        /*if (other.tag == "Bump")
         {
             timer = 0;
             seconds = 0;
             moveSpeed = slowSpeed;
             Debug.Log("You hit a speed bump!");
-        }
+        }*/
 
-        else if (other.tag == "Boost")
+        if (other.tag == "Boost")
         {
             timer = 0;
             seconds = 0;
