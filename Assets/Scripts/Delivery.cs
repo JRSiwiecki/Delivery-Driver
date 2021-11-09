@@ -10,7 +10,7 @@ public class Delivery : MonoBehaviour
     int numberOfCustomers, packagesDelivered;
     
     SpriteRenderer playerSpriteRenderer;
-    Color32 hasPackageColor = Color.green, happyCustomerColor = Color.green, noPackageColor = Color.white;
+    Color32 hasPackageColor = Color.magenta, happyCustomerColor = Color.green, noPackageColor = Color.white;
     
     void Start() 
     {
