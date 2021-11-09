@@ -17,11 +17,6 @@ public class Delivery : MonoBehaviour
         numberOfCustomers = GameObject.FindGameObjectsWithTag("Customer").Length;
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
-    
-    void OnCollisionEnter2D(Collision2D other) 
-    {
-        Debug.Log("Collided with something!");
-    }
 
     void OnTriggerEnter2D(Collider2D other) 
     {
